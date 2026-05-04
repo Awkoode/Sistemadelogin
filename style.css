@@ -1,8 +1,3 @@
-/* ============================================================
-   DEVAUTH — Auth System Styles
-   Aesthetic: Dark terminal meets editorial brutalism
-   ============================================================ */
-
 :root {
   --bg:         #080a0f;
   --bg-surface: #0d1117;
@@ -25,7 +20,7 @@
   --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Reset ── */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -36,7 +31,7 @@ html, body {
   overflow: hidden;
 }
 
-/* ── Background ── */
+
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -88,7 +83,7 @@ html, body {
   50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.3); }
 }
 
-/* ── Floating code fragments ── */
+
 .code-fragment {
   position: fixed;
   font-family: var(--mono);
@@ -114,7 +109,6 @@ html, body {
   100% { opacity: 0; transform: translateY(-30px); }
 }
 
-/* ── Layout ── */
 .container {
   position: relative;
   z-index: 1;
@@ -126,7 +120,6 @@ html, body {
   gap: 0;
 }
 
-/* ── Left panel ── */
 .panel-left {
   display: flex;
   flex-direction: column;
@@ -143,7 +136,7 @@ html, body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-/* brand */
+
 .brand {
   display: flex;
   align-items: center;
@@ -167,7 +160,7 @@ html, body {
   color: var(--text-1);
 }
 
-/* tagline */
+
 .tagline { margin-bottom: 20px; }
 .tagline-line {
   font-family: var(--sans);
@@ -187,7 +180,7 @@ html, body {
   margin-bottom: 48px;
 }
 
-/* stats */
+
 .stats {
   display: flex;
   align-items: center;
@@ -225,7 +218,7 @@ html, body {
   background: var(--border);
 }
 
-/* footer */
+
 .left-footer {
   display: flex;
   align-items: center;
@@ -251,7 +244,7 @@ html, body {
   color: var(--text-2);
 }
 
-/* ── Right panel ── */
+
 .panel-right {
   display: flex;
   flex-direction: column;
@@ -266,7 +259,7 @@ html, body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-/* ── Tabs ── */
+
 .tabs {
   display: flex;
   position: relative;
@@ -306,7 +299,7 @@ html, body {
 }
 .tab-indicator.right { transform: translateX(100%); }
 
-/* ── Form wrapper ── */
+
 .form-wrapper {
   position: relative;
   min-height: 320px;
@@ -325,7 +318,7 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* form header */
+
 .form-header { margin-bottom: 4px; }
 .form-header h3 {
   font-size: 22px;
@@ -339,7 +332,7 @@ html, body {
   color: var(--text-2);
 }
 
-/* ── Fields ── */
+
 .field { display: flex; flex-direction: column; gap: 6px; }
 
 .field label {
@@ -412,7 +405,7 @@ html, body {
   box-shadow: 0 0 0 3px rgba(255,85,102,0.08);
 }
 
-/* toggle password */
+
 .toggle-pw {
   position: absolute;
   right: 12px;
@@ -428,7 +421,7 @@ html, body {
 }
 .toggle-pw:hover { color: var(--accent); }
 
-/* ── Strength meter ── */
+
 .strength-meter {
   display: flex;
   align-items: center;
@@ -457,7 +450,7 @@ html, body {
   text-align: right;
 }
 
-/* ── Primary button ── */
+
 .btn-primary {
   display: flex;
   align-items: center;
@@ -515,7 +508,6 @@ html, body {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Toast ── */
 .toast {
   position: absolute;
   bottom: -60px;
@@ -547,7 +539,7 @@ html, body {
   color: var(--error);
 }
 
-/* ── Responsive ── */
+
 @media (max-width: 760px) {
   html, body { overflow: auto; }
 
@@ -570,9 +562,6 @@ html, body {
 }
 
 
-/* ============================================================
-   MODAL POPUP
-   ============================================================ */
 
 .modal-overlay {
   position: fixed;
@@ -612,7 +601,6 @@ html, body {
   opacity: 1;
 }
 
-/* Decorative corner lines */
 .modal-box::before,
 .modal-box::after {
   content: '';
@@ -633,7 +621,7 @@ html, body {
   border-radius: 0 0 4px 0;
 }
 
-/* Icon wrapper */
+
 .modal-icon-wrap {
   width: 72px; height: 72px;
   border-radius: 50%;
@@ -657,7 +645,7 @@ html, body {
 }
 .modal-icon-wrap.login svg { color: #50a0ff; }
 
-/* Ring pulse animation around icon */
+
 .modal-icon-wrap::before {
   content: '';
   position: absolute;
@@ -675,7 +663,7 @@ html, body {
   100% { opacity: 0;   transform: scale(1.5); }
 }
 
-/* Icon draw animation */
+
 .modal-icon-wrap svg {
   animation: iconPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
@@ -684,7 +672,7 @@ html, body {
   to   { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-/* Checkmark stroke draw */
+
 .modal-check-path {
   stroke-dasharray: 40;
   stroke-dashoffset: 40;
@@ -694,7 +682,7 @@ html, body {
   to { stroke-dashoffset: 0; }
 }
 
-/* Title */
+
 .modal-title {
   font-family: var(--sans);
   font-size: 22px;
@@ -705,7 +693,7 @@ html, body {
   animation: fadeUp 0.4s ease 0.2s both;
 }
 
-/* Description */
+
 .modal-desc {
   font-size: 13px;
   color: var(--text-2);
@@ -719,7 +707,7 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Progress bar (auto-redirect) */
+
 .modal-progress-wrap {
   margin-bottom: 24px;
   animation: fadeUp 0.4s ease 0.35s both;
@@ -747,7 +735,6 @@ html, body {
   letter-spacing: 0.05em;
 }
 
-/* CTA button */
 .modal-btn {
   display: inline-flex;
   align-items: center;

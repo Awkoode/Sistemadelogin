@@ -1,10 +1,6 @@
-/* ============================================================
-   DEVAUTH — Auth System Script
-   ============================================================ */
-
 const API = "http://localhost:3000";
 
-/* ── Tab switcher ── */
+
 function switchTab(tab) {
   const loginForm    = document.getElementById("form-login");
   const registerForm = document.getElementById("form-register");
@@ -35,7 +31,7 @@ function switchTab(tab) {
   hideToast();
 }
 
-/* ── Toggle password visibility ── */
+
 function togglePassword(inputId, btn) {
   const input = document.getElementById(inputId);
   const isHidden = input.type === "password";
@@ -52,7 +48,7 @@ function togglePassword(inputId, btn) {
        </svg>`;
 }
 
-/* ── Password strength checker ── */
+
 function checkStrength(pw) {
   const fill  = document.getElementById("strength-fill");
   const label = document.getElementById("strength-label");
@@ -85,7 +81,7 @@ function checkStrength(pw) {
   }
 }
 
-/* ── Toast (for validation errors only) ── */
+
 let toastTimer;
 function showToast(message, type = "error") {
   const toast = document.getElementById("toast");
@@ -100,7 +96,7 @@ function hideToast() {
   document.getElementById("toast").classList.remove("show");
 }
 
-/* ── Loading state ── */
+
 function setLoading(btn, loading) {
   const text   = btn.querySelector(".btn-text");
   const loader = btn.querySelector(".btn-loader");
@@ -111,7 +107,7 @@ function setLoading(btn, loading) {
   arrow.style.opacity = loading ? "0" : "1";
 }
 
-/* ── Validate inputs ── */
+
 function markError(inputId) {
   const input = document.getElementById(inputId);
   if (input) {
@@ -120,9 +116,7 @@ function markError(inputId) {
   }
 }
 
-/* ──────────────────────────────────────────
-   MODAL POPUP SYSTEM
-   ──────────────────────────────────────────*/
+
 
 let _redirectTimer = null;
 let _progressTimer = null;
@@ -139,7 +133,7 @@ function openModal({ type = "success", title, desc, redirectTo, redirectDelay, b
   clearTimeout(_redirectTimer);
   clearTimeout(_progressTimer);
 
-  // Icon
+  
   iconWrap.className = `modal-icon-wrap ${type}`;
   iconWrap.innerHTML = type === "success"
     ? `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -156,7 +150,6 @@ function openModal({ type = "success", title, desc, redirectTo, redirectDelay, b
   descEl.textContent  = desc;
   btnEl.textContent   = btnLabel;
 
-  // Progress bar for auto-redirect
   if (redirectDelay && redirectTo) {
     progressWrap.hidden = false;
     progressFill.style.transition = "none";
@@ -196,9 +189,7 @@ function closeModal(doRedirect = true) {
   }
 }
 
-/* ──────────────────────────────────────────
-   LOGIN
-   ──────────────────────────────────────────*/
+
 async function handleLogin(e) {
   e.preventDefault();
   const email    = document.getElementById("login-email").value.trim();
@@ -240,9 +231,7 @@ async function handleLogin(e) {
   }
 }
 
-/* ──────────────────────────────────────────
-   REGISTER
-   ──────────────────────────────────────────*/
+
 async function handleRegister(e) {
   e.preventDefault();
   const email    = document.getElementById("reg-email").value.trim();
@@ -297,9 +286,7 @@ async function handleRegister(e) {
   }
 }
 
-/* ──────────────────────────────────────────
-   ANIMATED COUNTERS
-   ──────────────────────────────────────────*/
+
 function animateCounter(el) {
   const target   = parseInt(el.dataset.target, 10);
   const duration = 1400;
@@ -313,26 +300,24 @@ function animateCounter(el) {
   })(performance.now());
 }
 
-/* ──────────────────────────────────────────
-   INIT
-   ──────────────────────────────────────────*/
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Stat counters
+  
   document.querySelectorAll(".stat-num").forEach((el, i) => {
     setTimeout(() => animateCounter(el), 600 + i * 150);
   });
 
-  // Floating code fragments stagger
+  
   document.querySelectorAll(".code-fragment").forEach((el, i) => {
     el.style.animationDelay = `${i * 3}s`;
   });
 
-  // Modal: close on backdrop click
+  
   document.getElementById("modal-overlay").addEventListener("click", (e) => {
     if (e.target === e.currentTarget) closeModal();
   });
 
-  // Modal: close on ESC
+  
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });

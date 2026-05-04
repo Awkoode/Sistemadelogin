@@ -26,7 +26,7 @@ const pool = new Pool({
   port: Number(process.env.DB_PORT),
 });
 
-// REGISTRO
+
 app.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -40,11 +40,11 @@ app.post("/register", async (req, res) => {
   res.send("Usuário criado");
 });
 
-// LOGIN
+
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
-  // ESTA LINHA ABAIXO É A QUE ESTÁ FALTANDO NO SEU PRINT:
+  
   const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
 
   if (result.rows.length === 0) {

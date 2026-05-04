@@ -11,23 +11,21 @@
 </head>
 <body>
 
-  <!-- Animated background grid -->
+  
   <div class="bg-grid"></div>
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
   <div class="bg-glow glow-3"></div>
 
-  <!-- Floating code fragments -->
+  
   <div class="code-fragment f1">const user = {}</div>
   <div class="code-fragment f2">await auth.login()</div>
   <div class="code-fragment f3">status: 200 OK</div>
   <div class="code-fragment f4">token: eyJhbG...</div>
   <div class="code-fragment f5">✓ authenticated</div>
 
-  <!-- Main container -->
   <div class="container">
 
-    <!-- Left panel: branding -->
     <div class="panel-left">
       <div class="brand">
         <div class="brand-icon">
@@ -73,10 +71,10 @@
       </div>
     </div>
 
-    <!-- Right panel: form -->
+    
     <div class="panel-right">
 
-      <!-- Tab switcher -->
+      
       <div class="tabs">
         <button class="tab active" id="tab-login" onclick="switchTab('login')">
           <span>Entrar</span>
@@ -88,7 +86,7 @@
       </div>
 
       <div class="form-wrapper">
-        <!-- Login form -->
+        
         <form id="form-login" class="form active" onsubmit="handleLogin(event)">
           <div class="form-header">
             <h3>Bem-vindo de volta</h3>
@@ -136,7 +134,7 @@
           </button>
         </form>
 
-        <!-- Register form -->
+        
         <form id="form-register" class="form" onsubmit="handleRegister(event)">
           <div class="form-header">
             <h3>Crie sua conta</h3>
@@ -198,25 +196,25 @@
         </form>
       </div>
 
-      <!-- Toast -->
+      
       <div id="toast" class="toast" aria-live="polite"></div>
     </div>
   </div>
 
-  <!-- ── Popup Modal ── -->
+  
   <div id="modal-overlay" class="modal-overlay" aria-modal="true" role="dialog">
     <div class="modal-box" id="modal-box">
 
-      <!-- Icon area -->
+      
       <div class="modal-icon-wrap" id="modal-icon-wrap">
-        <!-- filled by JS -->
+        
       </div>
 
-      <!-- Content -->
+      
       <h2 class="modal-title" id="modal-title"></h2>
       <p  class="modal-desc"  id="modal-desc"></p>
 
-      <!-- Progress bar (register only) -->
+      
       <div class="modal-progress-wrap" id="modal-progress-wrap" hidden>
         <div class="modal-progress-bar">
           <div class="modal-progress-fill" id="modal-progress-fill"></div>
@@ -224,7 +222,7 @@
         <span class="modal-progress-label" id="modal-progress-label">Redirecionando…</span>
       </div>
 
-      <!-- CTA button -->
+      
       <button class="modal-btn" id="modal-btn" onclick="closeModal()"></button>
     </div>
   </div>
