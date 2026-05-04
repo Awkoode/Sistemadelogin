@@ -1,0 +1,22 @@
+{
+  "name": "login-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "setup": "node -e \"const fs = require('fs'); if (!fs.existsSync('.env')) fs.writeFileSync('.env', 'DB_USER=postgres\\nDB_PASSWORD=1234\\nDB_HOST=127.0.0.1\\nDB_PORT=5432\\nDB_NAME=login')\"",
+  "start": "npm run setup && node server.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.20.0"
+  }
+}
+
